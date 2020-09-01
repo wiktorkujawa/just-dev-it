@@ -1,0 +1,28 @@
+query Posts {
+  posts {
+    _id
+    subject
+    content
+  }
+}
+
+mutation AddPost($subject: String!, $content: String!) {
+  addPost(subject: $subject, content: $content) {
+    subject
+    content
+  }
+}
+
+mutation DeletePost($_id: ID!) {
+  deletePost(_id: $_id) {
+    subject
+    content
+  }
+}
+
+mutation UpdatePost($_id: ID!, $subject: String, $content: String) {
+    updatePost(_id: $_id ,subject: $subject, content: $content) {
+      subject
+      content
+    }
+}

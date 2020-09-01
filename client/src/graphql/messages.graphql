@@ -1,0 +1,29 @@
+query Messages {
+  messages {
+    _id
+    content
+    path
+    fileImage
+    created_at
+    modified_at
+    email
+  }
+}
+
+mutation UploadMessage($file: Upload, $content: String!, $email: String!, $fileImage: Boolean!, $path: String) {
+    uploadMessage(file: $file, content: $content, email: $email, fileImage: $fileImage, path: $path){
+      content
+    }
+  }
+
+mutation DeleteMessage($_id: ID!, $fileImage: Boolean!) {
+deleteMessage(_id: $_id, fileImage: $fileImage) {
+  content
+  }
+}
+
+mutation UpdateMessage($_id: ID!, $fileImage: Boolean!, $file: Upload, $content: String, $path: String) {
+updateMessage(_id: $_id, fileImage: $fileImage, file: $file, content: $content, path: $path) {
+  content
+  }
+}

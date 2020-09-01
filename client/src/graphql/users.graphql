@@ -1,0 +1,12 @@
+query Users {
+  currentUser {
+    displayName
+    isAdmin
+    email
+    image
+  }
+}
+
+mutation Logout {
+  logout
+}
